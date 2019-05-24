@@ -10,3 +10,5 @@
 # 10.) npm i config --save 
 # 11.) KNOW ABOUT EJS AND PUG
 # 12.) npm install --save pug 
+# 13.) structurize the app  
+# 14.) Use Mongo DB 
