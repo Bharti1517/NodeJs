@@ -2,6 +2,8 @@ const express = require('express');
 const app = express(); 
 const morgan = require('morgan');
 const logger = require('./logger');
+console.log("PROCESS ENV : " + process.env.NODE_ENV);
+console.log(`Current Env is : ${app.get('env')}`);
 
 const courses = [
     {id:1 , name : 'JS'},
@@ -17,9 +19,13 @@ const courses = [
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
-app.use(morgan('tiny'));
+//app.use(morgan('tiny'));
 //app.use(morgan('combined'));
 app.use(logger);
+if(app.get('env')==='development'){
+    app.use(morgan('tiny'));
+    console.log('Morgan Enabled');
+}
 
 app.use(function(req,res,next){
     console.log('Logging.............');  
