@@ -49,10 +49,25 @@ app.post('/api/courses',(req,res)=>{
     courses.push(course);
     res.send(course);
 })
-// const posts = "";
-// app.get('/api/posts',(req,res)=>{  //INPUT IN URL => http://localhost:3000/api/posts
-//     res.send(posts); //OUTPUT is 
-// })
+app.put('/api/courses/:id',(req,res)=>{
+    // look for course
+    const course  = courses.find((c)=>c.id===
+    parseInt(req.params.id));
+    if(!course )    res.status(400).send(`Course ${req.params.id} is not found from put API  `);
+        
+    course.name = req.body.name ;
+    res.send(course);
+    
+})
+
+app.delete('/api/courses/:id',(req,res)=>{
+    const course  = courses.find((c)=>c.id===
+    parseInt(req.params.id));
+    if(!course )    res.status(400).send(`Course ${req.params.id} is not found from delete API  `);
+    const index = courses.indexOf(course);
+    courses.splice(index,1);
+    res.send(course);
+})
 
 //PORT 
 const port = process.env.PORT || 3000;
