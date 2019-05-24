@@ -49,6 +49,11 @@ app.post('/api/courses',(req,res)=>{
     courses.push(course);
     res.send(course);
 })
+// const posts = "";
+// app.get('/api/posts',(req,res)=>{  //INPUT IN URL => http://localhost:3000/api/posts
+//     res.send(posts); //OUTPUT is 
+// })
+
 //PORT 
 const port = process.env.PORT || 3000;
 app.listen(port,()=>console.log(`listening on ${port} \n http://localhost:3000  OR \n http://localhost:3000/api/courses`));
