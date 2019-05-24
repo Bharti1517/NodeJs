@@ -1,0 +1,18 @@
+db.courses.insert([
+    {
+        name:'Adv Java',
+        duration : '6 months'
+    },
+    {
+        name:'Adv Java',
+        duration : '6 months'
+    },
+    {
+        name:'Adv Java',
+        duration : '6 months'
+    },
+    {
+        name:'Adv Java',
+        duration : '6 months'
+    }
+])
