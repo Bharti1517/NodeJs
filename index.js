@@ -1,7 +1,14 @@
 const express = require('express');
 const app = express(); 
+const config = require('config');
 const morgan = require('morgan');
 const logger = require('./logger');
+
+//---------------------PUG--------------------------
+app.set('view engine','pug');
+app.set('views ','./views');
+
+
 console.log("PROCESS ENV : " + process.env.NODE_ENV);
 console.log(`Current Env is : ${app.get('env')}`);
 
@@ -21,11 +28,13 @@ app.use(express.urlencoded({extended:true}));
 app.use(express.static('public'));
 //app.use(morgan('tiny'));
 //app.use(morgan('combined'));
+
 app.use(logger);
-if(app.get('env')==='development'){
-    app.use(morgan('tiny'));
-    console.log('Morgan Enabled');
-}
+
+// if(app.get('env')==='development'){
+//     app.use(morgan('tiny'));
+//     console.log('Morgan Enabled');
+// }
 
 app.use(function(req,res,next){
     console.log('Logging.............');  
@@ -35,10 +44,22 @@ app.use(function(req,res,next){
       console.log('MiddleWare.............');  
       next()
     })
+
+
+console.log('--------------------CONFIGURATION ----------------');
+console.log('Application Name : ' + config.get('name'));
+//console.log('Mail Server Name  : ' + config.get(''));
+   
+
+
 //---------- FIRST SYNTAX FOR WRITING FUNCTION --------------------
 app.get('/',(req,res)=>{
-    res.send('Hello World');
+    //res.send('Hello World');
+    res.render('index',{title:'Express With PUG ',message:'Pug is template engine of express '}) 
+    // USES OF index.PUG FILE 
 })
+
+
 //---------- ANOTHER SYNTAX FOR WRITING FUNCTION ------------------
 //app.get('/',function(req,res){
 //})

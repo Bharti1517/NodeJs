@@ -7,4 +7,6 @@
 # 7.) install extension POSTMAN from google chrome
 # 8.) npm install --save morgan (FOR MIDDLEWARE)
 # 9.) to change environment IN cmd set NODE_ENV=production
-# 10.) npm i config --save  
+# 10.) npm i config --save 
+# 11.) KNOW ABOUT EJS AND PUG
+# 12.) npm install --save pug 
