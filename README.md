@@ -5,3 +5,4 @@
 # 5.) to run nodemon NODEMON INDEX
 # 6.) use env variable to change hardCoded port to understandable one USING process.env
 # 7.) install extension POSTMAN from google chrome
+# 8.) npm install --save morgan 

@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express(); 
+const morgan = require('morgan');
 const logger = require('./logger');
 
 const courses = [
@@ -15,6 +16,9 @@ const courses = [
 //------------CUSTOME MIDDLEWARE-------------------
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
+app.use(express.static('public'));
+app.use(morgan('tiny'));
+//app.use(morgan('combined'));
 app.use(logger);
 
 app.use(function(req,res,next){
