@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express(); 
+const logger = require('./logger');
 
 const courses = [
     {id:1 , name : 'JS'},
@@ -11,6 +12,19 @@ const courses = [
 ]
 
 
+//------------CUSTOME MIDDLEWARE-------------------
+app.use(express.json());
+app.use(express.urlencoded({extended:true}));
+app.use(logger);
+
+app.use(function(req,res,next){
+    console.log('Logging.............');  
+    next()
+  })
+  app.use(function(req,res,next){
+      console.log('MiddleWare.............');  
+      next()
+    })
 //---------- FIRST SYNTAX FOR WRITING FUNCTION --------------------
 app.get('/',(req,res)=>{
     res.send('Hello World');
@@ -71,5 +85,5 @@ app.delete('/api/courses/:id',(req,res)=>{
 
 //PORT 
 const port = process.env.PORT || 3000;
-app.listen(port,()=>console.log(`listening on ${port} \n http://localhost:3000  OR \n http://localhost:3000/api/courses`));
+app.listen(port,()=>console.log(`listening on ${port} \n http://localhost:${port}  OR \n http://localhost:${port}/api/courses`));
 
