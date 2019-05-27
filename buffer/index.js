@@ -19,3 +19,6 @@ console.log( buf.toString(undefined,0,5)); // encoding defaults to 'utf8', outpu
 var bufJSON = buf.write("Simply Bharti ");
 var json = buf.toJSON(bufJSON);
 console.log(json);  // don't use like console.log(' json : '+json ); it will produce object 
+
+
+console.log("\n--------------------------FOR MORE PLEASE FOLLOW LINK -----------------------------------------\nhttps://www.tutorialspoint.com/nodejs/nodejs_buffers.htm\n");
