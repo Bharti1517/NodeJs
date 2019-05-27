@@ -1,3 +1,3 @@
-const connection = require(con);
+var connection = require('./connection');
 
-console.log(con);
+console.log( `Connection is : ${connection.con}`);
