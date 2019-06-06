@@ -1,10 +1,14 @@
-var con = require('mysql');
+var mysql = require('mysql');
 
-con.createConnection({
+var con = mysql.createConnection({
     host : 'localhost',
     database : 'landandexpand_3',
     password : '',
     user :  'root' 
 });
+con.connect(function(err){
+    if(err) throw err ; 
+    console.log(' Database Connected');
+});
 
-console.log('Connected');
+module.exports = con ;
