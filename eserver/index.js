@@ -1,6 +1,7 @@
-const express = require('express');
+var express = require('express');
 var app = express();
-const api = require('./api.js');
+var api = require('./api.js');
+
 app.use('/api',api);
 
 var server = app.listen(8000,function(){
