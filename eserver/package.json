@@ -1,17 +1,31 @@
 {
-  "name": "server",
+  "name": "eserver",
   "version": "1.0.0",
-  "description": "for LAE app",
   "main": "index.js",
   "scripts": {
-    "test": "npm serve"
+    "start": "node ./index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "ARI",
   "license": "ISC",
   "dependencies": {
-    "cookie-parser": "^1.4.4",
-    "express": "^4.17.1",
-    "mysql": "^2.17.1",
-    "nodemon": "^1.19.1"
-  }
+    "body-parser": "^1.18.3",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "errorhandler": "^1.5.0",
+    "express": "^4.14.0",
+    "fs": "^0.0.1-security",
+    "helmet": "^3.16.0",
+    "https": "^1.0.0",
+    "jsonwebtoken": "^8.5.1",
+    "method-override": "^3.0.0",
+    "morgan": "^1.9.1",
+    "mysql": "^2.11.1",
+    "nodemon": "^1.19.1",
+    "path": "^0.12.7",
+    "rotating-file-stream": "^1.4.1",
+    "swagger-ui-express": "^4.0.6",
+    "yarn": "^1.16.0"
+  },
+  "description": "Rest API Server"
 }
